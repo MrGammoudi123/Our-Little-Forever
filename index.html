@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#211424" />
+  <meta name="description" content="Our Little Forever - A little universe, made with love." />
+  <title>Our Little Forever</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+:root{--burgundy:#541E32;--plum:#211424;--plum2:#2a172b;--rose:#F5A9C0;--blush:#FFE4EC;--gold:#E9C58B;--ivory:#FFF8F4;--cream:#fbf3f0;--dark-text:#4f263a;--glass:rgba(255,238,247,.055);--hairline:rgba(250,206,221,.2);--arabic:'Cairo','Tahoma','Segoe UI',sans-serif;--display:'Playfair Display',Georgia,serif;--sans:'DM Sans','Segoe UI',sans-serif;--ease:cubic-bezier(.2,.75,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:74px}body{margin:0;color:var(--ivory);font-family:var(--arabic);background:var(--plum);overflow-x:hidden;-webkit-font-smoothing:antialiased}body.no-scroll{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:3px solid var(--gold);outline-offset:5px}[hidden]{display:none!important}::selection{background:var(--rose);color:var(--plum)}.container{width:min(1150px,calc(100% - 52px));margin-inline:auto}.narrow{max-width:880px}.center{text-align:center}.section-dark{position:relative;background:var(--plum);color:var(--ivory);isolation:isolate}.section-light{color:var(--dark-text);background:#fff8f5}.section-cream{color:var(--dark-text);background:#ffeff2}.eyebrow{margin:0;color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:.3em;font-weight:700;text-transform:uppercase;line-height:1.7}.dark-eyebrow{color:#a46c7b}.section-title{font-family:var(--display);font-weight:500;font-size:clamp(44px,6.3vw,80px);line-height:1.17;letter-spacing:-.045em;margin:18px 0 12px;direction:ltr}.section-title em{color:var(--rose);font-weight:500}.dark-title{color:#54243a}.dark-title em{color:#b76183}.section-subtitle,.section-intro{font-family:var(--arabic);font-size:clamp(15px,1.5vw,18px);color:#dcc5d1;line-height:2.2;max-width:610px;margin:0 auto}.section-light .section-intro,.section-cream .section-intro{color:#846174}.reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}.reveal.is-visible{opacity:1;transform:translateY(0)}.reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.17s}.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:23px;min-height:56px;padding:15px 27px;border-radius:99px;border:1px solid transparent;font-size:14px;font-weight:800;box-shadow:0 8px 28px rgba(0,0,0,.1);transition:transform .28s,box-shadow .28s,background .28s;white-space:nowrap}.btn:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(0,0,0,.22)}.btn:active{transform:translateY(0) scale(.985)}.btn-ivory{color:#602e45;background:#fff1ee;border-color:#fff6f3}.btn-ivory:hover{background:#fff}.btn-pink{color:#381527;background:linear-gradient(120deg,#fad3db,#f1a5bf);border-color:rgba(255,235,242,.6)}.btn-pink:hover{background:#ffdae3}.btn-arrow,.arrow-icon{font-size:20px;line-height:1;font-weight:400}
+/* First-load greeting */
+.loader{position:fixed;inset:0;z-index:120;background:#211424;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;transition:opacity .65s,visibility .65s}.loader.off{opacity:0;visibility:hidden;pointer-events:none}.loader-mark{width:74px;height:74px;display:grid;place-items:center;position:relative}.loader-heart{color:var(--rose);font-size:45px;filter:drop-shadow(0 0 20px rgba(245,169,192,.38));animation:heartbreathe 1.8s ease-in-out infinite}.loader-ring{position:absolute;inset:0;border:1px solid rgba(245,169,192,.35);border-radius:50%;border-top-color:var(--gold);animation:rotate 2s linear infinite}.loader p{font:italic 18px var(--display);color:var(--gold);letter-spacing:.01em}
+/* Sky particles */
+.global-sparkles{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden;opacity:.4}.sparkle{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--ivory);box-shadow:0 0 9px 1px #fff4f3;opacity:0;animation:twinkle var(--dur,5s) ease-in-out infinite;animation-delay:var(--delay,0s)}.splash{position:fixed;inset:0;z-index:101;overflow:auto;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ivory);background:radial-gradient(ellipse 550px 350px at 50% 54%,rgba(123,50,77,.35),transparent 80%),radial-gradient(ellipse 1000px 800px at 50% 120%,rgba(91,31,59,.45),transparent 75%),#1c1020;transition:opacity 1s,visibility 1s}.splash.exit{opacity:0;visibility:hidden;pointer-events:none}.splash:before,.splash:after{content:'';position:absolute;width:330px;height:330px;border:1px solid rgba(242,169,194,.1);border-radius:50%;pointer-events:none}.splash:before{left:-240px;top:-190px;box-shadow:0 0 0 50px rgba(242,169,194,.025),0 0 0 120px rgba(242,169,194,.02)}.splash:after{right:-210px;bottom:-240px;box-shadow:0 0 0 60px rgba(242,169,194,.025),0 0 0 130px rgba(242,169,194,.015)}.splash-top{position:absolute;top:35px;left:0;right:0;text-align:center;color:#d9b1bd;font:600 10px var(--sans);letter-spacing:.28em}.tiny-star{color:var(--gold);margin:0 10px}.splash-inner{width:min(620px,calc(100% - 35px));position:relative;z-index:2;padding:80px 0 78px}.splash-inner .eyebrow{font-size:10px;letter-spacing:.26em;margin:4px auto 14px}.splash h1{font-size:clamp(25px,3.3vw,37px);font-weight:700;line-height:1.95;max-width:620px;margin:0 auto 6px;text-shadow:0 4px 26px rgba(245,169,192,.1)}.splash-subtitle{font-size:14px;color:#dfc0ce;line-height:2;margin:0 auto 27px;max-width:530px}.splash-button{min-width:218px}.splash-footnote{font:600 10px var(--sans);color:#a67f90;letter-spacing:.24em;margin:39px 0 0}.interpunct{color:var(--gold);padding-inline:9px}.splash-corner{color:var(--gold);position:absolute;font-size:24px;opacity:.5}.corner-a{right:13%;top:20%}.corner-b{left:12%;bottom:18%;font-size:17px}.splash-sparkles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.envelope-stage{height:260px;width:325px;margin:4px auto 10px;display:flex;align-items:center;justify-content:center;perspective:600px;position:relative;filter:drop-shadow(0 26px 30px rgba(0,0,0,.28))}.envelope-shadow{position:absolute;width:220px;height:23px;left:50%;bottom:11px;transform:translateX(-50%);background:rgba(9,4,12,.4);filter:blur(20px);border-radius:50%}.envelope{width:244px;height:157px;position:relative;isolation:isolate;animation:floaty 5s ease-in-out infinite;transform-style:preserve-3d}.envelope-back{position:absolute;inset:0;border-radius:5px;background:linear-gradient(160deg,#eab6c5,#fbe1e4);box-shadow:0 6px 60px rgba(242,123,164,.22)}.envelope-back:before{content:'';position:absolute;inset:0;clip-path:polygon(0 0,50% 57%,100% 0);background:#dca1b6}.envelope-face{position:absolute;inset:0;border-radius:0 0 5px 5px;background:linear-gradient(145deg,#ffe3e8 10%,#ebbdc9);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%);z-index:4}.envelope-fold{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 59%);background:linear-gradient(#ffe2e8,#efbbca);z-index:6;transform-origin:center top;transition:transform 1.05s cubic-bezier(.3,.8,.1,1),z-index 0s 0s;backface-visibility:visible}.envelope-seal{position:absolute;z-index:7;top:47%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#d58ca7,#a85175);border:2px solid rgba(255,228,235,.68);box-shadow:0 3px 8px rgba(78,20,52,.35),0 0 22px rgba(255,173,195,.55);transition:opacity .32s,transform .8s}.envelope-seal span{color:#ffe9e8;font-size:25px;line-height:1}.paper{position:absolute;z-index:3;left:10px;right:10px;bottom:4px;height:125px;background:linear-gradient(130deg,#fffefa,#fce8eb);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#68384e;gap:8px;box-shadow:0 -3px 18px rgba(84,30,50,.06);transition:transform 1.25s .3s cubic-bezier(.17,.8,.29,1)}.paper-mini{font:italic 14px var(--display)}.paper-heart{font-size:26px;color:#c96a8c}.paper-lines{display:block;height:10px;width:88px;border-top:1px solid #eac5c7;border-bottom:1px solid #eac5c7}.envelope-stage.open .envelope-fold{transform:rotateX(180deg);z-index:2}.envelope-stage.open .envelope-seal{transform:translate(-50%,-200%) scale(.6);opacity:0}.envelope-stage.open .paper{transform:translateY(-110px);transition-delay:.5s}.envelope-stage.open .envelope{animation:none}.splash.opening .splash-inner h1,.splash.opening .splash-subtitle,.splash.opening .eyebrow,.splash.opening .splash-button{opacity:0;transform:translateY(12px);transition:.5s}.splash.opening .splash-button{pointer-events:none}.splash.opening .envelope-stage{transform:scale(1.14);transition:transform 1.15s}.opening-burst{position:absolute;left:50%;top:50%;font-size:18px;color:var(--rose);pointer-events:none;z-index:10;animation:burst 1.4s ease-out forwards}
+/* Navigation */
+.site-header{height:82px;position:absolute;z-index:15;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(25px,5.3vw,83px);border-bottom:1px solid rgba(255,235,242,.1);background:linear-gradient(180deg,rgba(22,13,24,.5),transparent)}.brand{direction:ltr;display:flex;align-items:center;gap:11px;white-space:nowrap}.brand-icon{width:34px;height:34px;border:1px solid rgba(245,169,192,.42);display:grid;place-items:center;color:var(--rose);border-radius:50%;font-size:19px;transform:rotate(-12deg)}.brand-text{font:600 20px var(--display);letter-spacing:-.025em}.brand-text i{font-weight:500;color:var(--rose)}.brand-end{color:var(--gold)}.desktop-nav{direction:ltr;display:flex;align-items:center;gap:clamp(13px,2.4vw,31px);margin-inline:auto}.desktop-nav a{font:500 12px var(--sans);color:#cfbdc5;transition:color .25s}.desktop-nav a:hover,.desktop-nav a.active{color:var(--rose)}.header-right{display:flex;gap:14px;align-items:center}.since-pill{font:500 10px var(--sans);letter-spacing:.12em;border:1px solid rgba(245,169,192,.25);border-radius:99px;padding:11px 17px;white-space:nowrap;color:#eccedc;direction:ltr}.pill-dot{width:5px;height:5px;display:inline-block;border-radius:50%;background:var(--gold);margin-right:5px;vertical-align:middle;box-shadow:0 0 10px var(--gold)}.music-btn{border:1px solid rgba(245,169,192,.4);background:rgba(255,231,241,.08);width:36px;height:36px;border-radius:50%;color:var(--rose);display:grid;place-items:center}.music-btn svg{width:17px;height:17px}.bottom-nav{display:none}
+/* Welcome */
+.hero{min-height:min(850px,100svh);padding:145px 0 80px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 46% 38% at 50% 43%,rgba(101,40,72,.32),transparent 91%),radial-gradient(ellipse 45% 80% at 0% 80%,rgba(76,29,62,.18),transparent),linear-gradient(#211424,#281726 92%,#261626)}.hero:after{position:absolute;content:'';bottom:-1px;left:0;right:0;height:110px;background:linear-gradient(transparent,#211424)}.hero-content{position:relative;z-index:5;text-align:center}.hero-eyebrow{font-size:10px;letter-spacing:.32em}.hero-title{max-width:880px;font-size:clamp(36px,5.2vw,73px);line-height:1.75;font-weight:700;margin:12px auto 15px;background:linear-gradient(115deg,#fff8f5 25%,#f3adc3 77%,#fff8f5 110%);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:none}.hero-paragraph{white-space:pre-line;font-size:clamp(15px,1.48vw,18px);line-height:2.5;color:#eed3de;max-width:740px;margin:0 auto;font-weight:500}.hero-script{font:italic clamp(19px,2.2vw,28px) var(--display);letter-spacing:-.02em;color:var(--gold);margin:30px auto 27px;direction:ltr}.hero-cta{min-width:245px;margin-bottom:12px}.hero-scroll{direction:ltr;display:flex;align-items:center;gap:12px;justify-content:center;color:#a98999;font:600 9px var(--sans);letter-spacing:.27em;margin-top:56px}.scroll-line{height:1px;width:43px;background:linear-gradient(90deg,var(--rose),transparent)}.hero-float-left,.hero-float-right{position:absolute;z-index:4;bottom:115px;font:600 10px var(--sans);letter-spacing:.3em;color:#9f718e;writing-mode:vertical-rl}.hero-float-left{left:4%}.hero-float-left span{color:var(--gold)}.hero-float-right{right:4%}.hero-sculpture{position:absolute;z-index:0;top:34%;left:50%;transform:translate(-50%,-50%);height:415px;width:415px;opacity:.8;pointer-events:none}.orbit{position:absolute;inset:0;border:1px solid rgba(240,165,188,.095);border-radius:50%;box-shadow:0 0 90px rgba(195,93,132,.03),inset 0 0 45px rgba(211,115,147,.018)}.orbit-1{inset:10px}.orbit-2{inset:54px;border-style:dashed;animation:rotate 100s linear infinite}.orbit-3{inset:105px;border-color:rgba(233,197,139,.12)}.hero-center-heart{position:absolute;inset:0;display:grid;place-items:center;color:rgba(244,163,191,.28);font-size:86px;filter:drop-shadow(0 0 45px rgba(250,138,190,.38));animation:heartbreathe 3.3s ease-in-out infinite}.orbit-star{position:absolute;color:var(--gold);font-size:19px}.star-a{top:13%;left:13%}.star-b{right:0;top:51%;font-size:12px}.star-c{bottom:3%;left:42%;font-size:13px}.hero-dust{position:absolute;pointer-events:none;width:36vw;height:36vw;background:radial-gradient(circle,rgba(146,67,109,.11),transparent 65%)}.dust-left{left:-20%;top:0}.dust-right{right:-19%;bottom:-30%}
+/* Countdown */
+.counter-section{padding:105px 0 145px;background:radial-gradient(ellipse 700px 280px at 50% 57%,rgba(107,45,76,.29),transparent 80%),#211424;overflow:hidden}.counter-section .section-subtitle{font:italic 19px var(--display);color:#bfa5b0;letter-spacing:.01em;direction:ltr}.counter-wrap{position:relative;display:flex;justify-content:center;align-items:center;gap:21px;margin:62px auto 37px;direction:ltr}.counter-glow{position:absolute;inset:-70px;pointer-events:none;background:radial-gradient(ellipse,rgba(214,110,156,.15),transparent 69%);filter:blur(18px)}.counter-card{width:275px;min-height:265px;position:relative;z-index:1;border:1px solid rgba(255,189,213,.28);border-radius:22px;background:linear-gradient(155deg,rgba(255,203,222,.1),rgba(108,44,80,.12) 56%,rgba(236,155,187,.07));box-shadow:0 27px 75px rgba(15,3,18,.2),inset 0 1px rgba(255,235,242,.13);padding:26px 20px 26px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}.counter-card:after{position:absolute;content:'';top:0;left:25%;width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,226,.75),transparent)}.card-shine{position:absolute;top:-140px;left:-140px;width:220px;height:220px;border-radius:50%;background:rgba(245,169,192,.07);filter:blur(35px)}.counter-icon{color:var(--rose);font-size:21px;line-height:1}.count-num{font:500 clamp(86px,10vw,121px)/1.04 var(--display);color:var(--ivory);margin:7px 0 6px;letter-spacing:-.05em;text-shadow:0 2px 28px rgba(249,177,202,.24);font-variant-numeric:lining-nums tabular-nums}.counter-label{font:700 11px var(--sans);letter-spacing:.36em;color:var(--gold);margin:5px 0}.counter-arabic{font-size:11px;color:#d2b1c2;margin-top:4px;font-weight:600}.counter-split{font:italic 39px var(--display);color:#b88099;z-index:2;transform:translateY(-2px)}.counter-caption{font-size:18px;line-height:2.2;color:#f7d2df;max-width:640px;margin:24px auto}.since-divider{display:flex;justify-content:center;align-items:center;gap:19px;direction:ltr;color:#a8889a;font:600 11px var(--sans);letter-spacing:.16em}.since-divider>span:first-child,.since-divider>span:last-child{width:45px;height:1px;background:rgba(233,197,139,.38)}.counter-deco{position:absolute;color:#bd779b;opacity:.55}.deco-a{left:15%;top:32%;font-size:19px}.deco-b{right:14%;bottom:27%;font-size:28px}
+/* Galaxy */
+.galaxy-section{padding:105px 0 115px;border-top:1px solid rgba(255,224,236,.06);background:radial-gradient(ellipse 700px 360px at 65% 64%,rgba(82,39,85,.24),transparent 89%),linear-gradient(180deg,#211424,#25162d)}.section-topline{display:flex;align-items:center;justify-content:space-between;direction:ltr}.label-end{font:600 10px var(--sans);letter-spacing:.23em;color:#92768d}.galaxy-section .section-title{text-align:left;margin-top:27px}.galaxy-section .section-intro{margin:0;max-width:600px;text-align:left;direction:rtl}.galaxy-outer{position:relative;margin-top:53px;border-radius:25px;min-height:363px;overflow:hidden;border:1px solid rgba(228,178,222,.14);background:radial-gradient(ellipse at 45% 65%,rgba(92,54,119,.23),transparent 75%),radial-gradient(ellipse at 8% 5%,rgba(255,179,219,.07),transparent 39%),rgba(11,8,23,.38)}.galaxy-fog{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 11% 26%,#fff 70%,transparent),radial-gradient(1px 1px at 31% 72%,#fbdfec 70%,transparent),radial-gradient(2px 2px at 71% 23%,#eecbdc 70%,transparent),radial-gradient(1px 1px at 84% 68%,#fff 70%,transparent),radial-gradient(1px 1px at 51% 8%,#fff 70%,transparent);background-size:180px 140px;opacity:.42;pointer-events:none}.galaxy-track{position:relative;z-index:2;display:flex;direction:ltr;align-items:center;gap:0;padding:70px 40px 62px;overflow:auto hidden;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:rgba(233,197,139,.25) transparent;min-height:363px}.galaxy-track::-webkit-scrollbar{height:4px}.galaxy-track::-webkit-scrollbar-thumb{background:rgba(233,197,139,.25)}.galaxy-node{position:relative;flex:none;width:144px;height:200px;display:flex;align-items:center;justify-content:flex-start;flex-direction:column;scroll-snap-align:center;gap:8px;padding:0;border:0;background:none;color:var(--ivory)}.galaxy-node:nth-child(even){transform:translateY(28px)}.galaxy-node:nth-child(odd){transform:translateY(-18px)}.galaxy-node:after{content:'';height:1px;width:116px;position:absolute;left:calc(50% + 30px);top:42px;background:linear-gradient(90deg,rgba(233,197,139,.42),rgba(233,197,139,.12));pointer-events:none}.galaxy-node:last-child:after{display:none}.galaxy-star{position:relative;z-index:2;width:82px;height:82px;display:grid;place-items:center;transition:transform .3s,filter .3s}.galaxy-star:before{content:'';position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(255,196,219,.23);background:radial-gradient(circle,rgba(235,151,202,.15),transparent 72%)}.galaxy-node.open .galaxy-star{filter:drop-shadow(0 0 15px rgba(235,167,218,.5))}.galaxy-node.open:hover .galaxy-star{transform:scale(1.14) rotate(8deg)}.galaxy-star svg{position:relative;z-index:1;width:35px;height:35px;fill:rgba(255,220,178,.87);stroke:#fff1d3;stroke-width:.4}.galaxy-node.locked .galaxy-star{filter:grayscale(1);opacity:.33}.galaxy-node.locked .galaxy-star svg{fill:#bfb9c4}.galaxy-month{font:700 10px var(--sans);color:#ddbdca;letter-spacing:.14em;margin-top:0;text-transform:uppercase}.galaxy-label{font:italic 13px var(--display);color:#f7e8f0;max-width:140px;text-align:center;line-height:1.5}.galaxy-node.locked .galaxy-label,.galaxy-node.locked .galaxy-month{opacity:.45}.galaxy-lock{font-size:13px;color:#99869c}.galaxy-footnote{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:23px;color:#b59bb1;font-size:11px}.legend-dot{display:inline-block;width:7px;height:7px;border-radius:50%}.legend-dot.unlocked{background:#ebbfaa;box-shadow:0 0 12px #eba4cf}.legend-dot.locked{background:#7d7184;margin-inline-start:15px}
+/* Photo gallery */
+.gallery-section{padding:118px 0 102px;overflow:hidden}.gallery-header{display:flex;align-items:end;justify-content:space-between;gap:25px}.gallery-section .section-title{text-align:left}.gallery-section .section-intro{text-align:left;margin:0;max-width:630px}.gallery-controls{display:flex;direction:ltr;gap:9px;padding-bottom:18px}.round-btn{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;border:1px solid #dfbfc9;background:#fff;color:#7c3c57;font-size:23px;transition:background .2s,transform .2s}.round-btn:hover{background:#fce1e9;transform:translateY(-3px)}.gallery-scroller{margin:49px 0 0;display:flex;gap:29px;padding:15px max(26px,calc((100vw - 1150px)/2)) 46px;overflow:auto hidden;scrollbar-width:none;scroll-snap-type:x mandatory;scroll-padding-inline:5vw;overscroll-behavior-x:contain}.gallery-scroller::-webkit-scrollbar{display:none}.polaroid{position:relative;min-width:275px;width:min(26vw,314px);flex:none;transform:rotate(var(--tilt));padding:14px 14px 15px;border:0;box-shadow:0 17px 40px rgba(122,70,91,.12);background:#fffdfa;text-align:left;color:#643c4e;cursor:pointer;scroll-snap-align:center;transition:transform .35s,box-shadow .35s}.polaroid:hover{transform:translateY(-9px) rotate(0deg);box-shadow:0 25px 42px rgba(122,70,91,.22)}.photo-art{height:282px;width:100%;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 65% 30%,rgba(255,255,255,.5),transparent 40%),linear-gradient(var(--deg),var(--col-a),var(--col-b));color:#fff}.photo-art:after{content:'';position:absolute;inset:12px;border:1px solid rgba(255,255,255,.18);pointer-events:none}.photo-art img{height:100%;width:100%;object-fit:cover}.photo-placeholder{display:flex;align-items:center;flex-direction:column;gap:15px}.placeholder-frame{height:86px;width:100px;border:1px solid rgba(255,255,255,.6);border-radius:100px 100px 45px 45px;display:grid;place-items:center;box-shadow:0 0 45px rgba(255,249,251,.1)}.placeholder-frame span{font-size:34px;color:rgba(255,250,245,.83);filter:drop-shadow(0 0 10px rgba(255,251,255,.3))}.photo-placeholder small{font:700 9px var(--sans);color:#fff9f8;letter-spacing:.24em}.polaroid-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 5px 1px}.polaroid-caption{font-size:13px;font-weight:600;line-height:1.6;text-align:right}.polaroid-heart{font-size:22px;color:#c77191;line-height:1}.polaroid-date{display:block;color:#af92a0;font:500 10px var(--sans);margin-top:5px;text-align:right}.gallery-bottom{display:flex;justify-content:space-between;align-items:center;direction:ltr}.gallery-bottom p{font:600 10px var(--sans);letter-spacing:.21em;color:#a67e8d}.gallery-bottom p span{color:#b16485}.gallery-dots{display:flex;gap:7px;align-items:center;direction:ltr}.gallery-dot{width:7px;height:7px;border:0;border-radius:99px;background:#e2c7d0;padding:0;transition:all .2s}.gallery-dot.active{width:28px;background:#ab6681}
+/* Reasons */
+.reasons-section{padding:116px 0 125px;background:radial-gradient(ellipse at 15% 10%,#fff9f7,#ffeff2 60%)}.reasons-section .section-title{font-family:var(--arabic);font-weight:800;letter-spacing:-.03em;font-size:clamp(34px,4vw,55px);line-height:1.7}.reasons-section .section-intro{margin:0 auto 48px}.reasons-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;direction:rtl}.reason-card{min-height:208px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;border-radius:19px;background:linear-gradient(150deg,#fffaf8,#fff2f3);border:1px solid #f1d7df;box-shadow:0 13px 35px rgba(112,49,75,.045);cursor:pointer;transition:box-shadow .3s,transform .3s,background .3s}.reason-card:hover{transform:translateY(-5px);box-shadow:0 19px 40px rgba(112,49,75,.1)}.reason-card:before{content:'';position:absolute;inset:8px;border-radius:13px;border:1px solid rgba(220,166,187,.26);pointer-events:none}.reason-icon{font-size:42px;color:#c87497;line-height:1;filter:drop-shadow(0 6px 8px rgba(199,101,151,.12));transition:transform .5s}.reason-card:hover .reason-icon{transform:rotate(-10deg) scale(1.1)}.reason-index{font:700 10px var(--sans);color:#b78299;letter-spacing:.15em}.reason-prompt{font:700 13px var(--arabic);color:#714c60}.reason-message{display:none;font:700 15px/2 var(--arabic);max-width:250px;color:#733751}.reason-card.revealed{background:linear-gradient(145deg,#fff5f6,#f8dbe6);border-color:#e8b6ca}.reason-card.revealed .reason-icon{transform:scale(.8)}.reason-card.revealed .reason-prompt{display:none}.reason-card.revealed .reason-message{display:block;animation:fadeup .5s var(--ease)}.reasons-footnote{text-align:center;margin:36px 0 0;font:700 10px var(--sans);letter-spacing:.21em;color:#b18d9f}
+/* Secret letter */
+.letter-section{overflow:hidden;padding:160px 0 142px;background:linear-gradient(130deg,#271427,#34172d 65%,#291524)}.letter-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;direction:ltr}.letter-halo{position:absolute;top:0;left:0;width:52%;height:100%;background:radial-gradient(ellipse,rgba(204,107,150,.14),transparent 64%);pointer-events:none}.letter-illustration{height:385px;position:relative;display:grid;place-items:center}.letter-glow{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(238,160,189,.19),transparent 65%);filter:blur(20px)}.letter-card{position:relative;width:280px;height:318px;padding:30px 15px;background:linear-gradient(138deg,#fff8f1,#f9e2e3);border-radius:5px;transform:rotate(-10deg);box-shadow:0 30px 90px rgba(7,3,12,.33);display:flex;align-items:center;justify-content:center;flex-direction:column;border:7px solid rgba(255,255,255,.45);transition:transform .5s}.letter-illustration:hover .letter-card{transform:rotate(-6deg) translateY(-7px)}.letter-card:after{content:'';position:absolute;inset:16px;border:1px solid #d9a9b7;opacity:.8}.letter-small-cap{font:700 9px var(--sans);letter-spacing:.18em;color:#a57687;position:relative;z-index:1}.letter-big-heart{font-size:98px;color:#bd7391;text-shadow:0 8px 15px rgba(154,63,97,.15);line-height:1.6;position:relative;z-index:1}.letter-sign{font:italic 18px var(--display);color:#95596f;position:relative;z-index:1}.letter-spark{position:absolute;color:var(--gold);font-size:25px}.letter-spark.one{top:9%;left:8%}.letter-spark.two{bottom:13%;right:14%;font-size:18px}.letter-spark.three{top:13%;right:9%;font-size:12px}.letter-copy{direction:rtl;text-align:right}.letter-copy .section-title{font-family:var(--arabic);font-weight:800;font-size:clamp(31px,3.7vw,49px);line-height:1.75;direction:rtl;letter-spacing:-.03em}.letter-copy .section-intro{margin:0 0 25px;max-width:500px;text-align:right}.letter-reveal{margin-top:34px;animation:fadeup 1s var(--ease);border-radius:12px;background:linear-gradient(150deg,#fff9f4,#fbe5ea);padding:35px;color:#673449;box-shadow:0 18px 65px rgba(0,0,0,.24);border-top:3px solid #e8b0c2}.written-letter{font:600 14px/2.5 var(--arabic);white-space:pre-line}.letter-signature{display:block;margin-top:18px;font:italic 17px var(--display);color:#a46784;text-align:left;direction:ltr}
+/* Time capsule */
+.future-section{padding:120px 0 117px;background:radial-gradient(ellipse 500px 400px at 50% 65%,rgba(111,62,102,.19),transparent 70%),#241627;border-top:1px solid rgba(246,191,215,.08)}.future-section .section-title{font-family:var(--arabic);direction:rtl;font-weight:800;font-size:clamp(35px,4.2vw,56px);letter-spacing:-.03em;line-height:1.7}.future-section .section-intro{font-size:17px}.future-inner{max-width:870px;text-align:center}.time-capsule{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(350px,80vw);height:350px;margin:49px auto 15px;border-radius:50%;background:radial-gradient(circle at 42% 33%,rgba(247,186,214,.17),rgba(89,43,74,.13) 39%,rgba(34,19,41,.5) 70%);border:1px solid rgba(233,197,139,.36);box-shadow:0 0 0 13px rgba(245,174,196,.018),inset 0 0 70px rgba(231,126,174,.14),0 25px 95px rgba(0,0,0,.1);color:var(--ivory);transition:transform .4s,box-shadow .4s}.time-capsule:hover:not(:disabled){transform:scale(1.025);box-shadow:0 0 40px rgba(245,169,192,.12),inset 0 0 90px rgba(231,126,174,.17)}.time-capsule:disabled{cursor:default}.capsule-ring{position:absolute;inset:-20px;border:1px dashed rgba(244,190,210,.2);border-radius:50%;pointer-events:none}.capsule-ring.ring-two{inset:-38px;border-style:solid;border-color:rgba(244,190,210,.07)}.capsule-top{font:600 9px var(--sans);letter-spacing:.33em;color:#cfaabd;margin-top:14px}.capsule-symbol{margin:15px 0;font-size:70px;color:var(--gold);filter:drop-shadow(0 0 17px rgba(233,197,139,.3));line-height:1.2;transition:transform .5s}.capsule-symbol svg{width:65px;height:65px;stroke:var(--gold);fill:none;stroke-width:1.3}.capsule-date{font:600 16px var(--display);letter-spacing:.22em;color:#ffe5dc;direction:ltr}.capsule-date span{font-size:12px;color:var(--gold)}.capsule-prompt{font-size:11px;color:#ddbdcc;margin-top:19px;max-width:230px;line-height:2}.time-capsule.unlocked .capsule-symbol{color:var(--rose)}.future-message{font:600 16px/2.2 var(--arabic);white-space:pre-line;max-width:625px;margin:30px auto 0;padding:29px;border-radius:13px;border:1px solid rgba(245,169,192,.3);background:rgba(255,230,239,.08);animation:fadeup .6s var(--ease)}.future-footnote{font:600 9px var(--sans);letter-spacing:.19em;color:#8f7c91;margin:60px auto 0}
+/* Final love reveal */
+.final-section{min-height:820px;padding:115px 0 60px;overflow:hidden;display:flex;justify-content:center;align-items:center;background:radial-gradient(ellipse 650px 570px at 50% 45%,rgba(93,34,62,.33),transparent 72%),linear-gradient(180deg,#241627,#190f1d)}.final-inner{position:relative;z-index:2}.final-heart-wrap{position:relative;width:225px;height:200px;margin:30px auto 10px;display:grid;place-items:center}.heartbeat-halo{position:absolute;inset:1px;border-radius:50%;background:radial-gradient(circle,rgba(221,95,144,.23),transparent 65%);filter:blur(20px)}.final-heart{font-family:Georgia,serif;font-size:180px;line-height:1;color:#e581a6;text-shadow:0 0 14px rgba(240,135,171,.35),0 0 70px rgba(223,89,142,.32);animation:heartbreathe 3s ease-in-out infinite;position:relative;transform-origin:center}.final-heart-wrap.beating .final-heart{animation:heartbeat .85s infinite}.final-question{font:800 clamp(26px,3.1vw,44px)/1.85 var(--arabic);margin:10px auto 25px;max-width:720px}.final-reveal{margin:34px auto 8px;animation:fadeup 1.1s var(--ease)}.final-reveal h3{font:800 clamp(34px,5.7vw,69px)/1.5 var(--arabic);color:#ffc4d7;margin:0;text-shadow:0 0 45px rgba(239,136,175,.4)}.final-reveal p{font:600 16px/2.4 var(--arabic);max-width:630px;margin:12px auto;color:#e6c3d2}.final-reveal>span{display:block;font:italic 21px var(--display);color:var(--gold);margin-top:18px;direction:ltr}.final-footer{display:flex;justify-content:center;align-items:center;gap:17px;direction:ltr;margin-top:105px;font:700 10px var(--sans);color:#af889e;letter-spacing:.2em}.footer-line{height:1px;width:50px;background:rgba(228,175,197,.3)}.footer-heart{color:var(--rose);font-size:12px;margin:0 4px}.final-shimmer{position:absolute;inset:0;pointer-events:none}.final-heart-particle{position:absolute;bottom:-10%;font-size:20px;color:rgba(249,166,194,.85);text-shadow:0 0 10px rgba(255,163,198,.3);animation:rise var(--rise,3s) ease-out forwards}
+/* Modal */
+.modal{position:fixed;inset:0;z-index:105;display:flex;align-items:center;justify-content:center;padding:22px}.modal-backdrop{position:absolute;inset:0;background:rgba(18,9,24,.85);backdrop-filter:blur(14px)}.modal-panel{position:relative;z-index:1;width:min(570px,100%);max-height:90vh;overflow:auto;border-radius:21px;border:1px solid rgba(255,197,216,.3);background:linear-gradient(145deg,#44203a,#241525);padding:42px;box-shadow:0 25px 125px rgba(0,0,0,.45);animation:popin .3s var(--ease)}.modal-close{position:absolute;z-index:5;top:15px;right:15px;width:35px;height:35px;border:1px solid rgba(255,227,235,.3);border-radius:50%;background:rgba(255,255,255,.07);color:#fff;font:normal 25px/1 Arial}.modal-star{display:block;text-align:center;color:var(--gold);font-size:53px;text-shadow:0 0 25px #df8cc1}.modal-month{display:block;font:700 10px var(--sans);color:#deb5c8;letter-spacing:.2em;text-transform:uppercase;text-align:center;margin-top:9px}.modal-h{font:500 38px/1.3 var(--display);text-align:center;margin:18px 0;color:var(--blush)}.modal-p{text-align:center;font:600 16px/2.2 var(--arabic);color:#f5d9e2;white-space:pre-line}.modal-note{display:block;text-align:center;font:600 10px var(--sans);color:#b29bab;letter-spacing:.1em;margin-top:25px}.lightbox-modal{width:min(790px,100%);padding:18px}.lightbox-main{min-height:350px;max-height:68vh;display:grid;place-items:center;background:linear-gradient(125deg,#744966,#bc7b96);border-radius:11px;overflow:hidden;position:relative}.lightbox-main img{width:100%;max-height:68vh;object-fit:contain}.lightbox-placeholder{display:flex;flex-direction:column;align-items:center;gap:12px}.lightbox-placeholder span{font-size:74px;color:#fff0f5}.lightbox-placeholder p{font:600 12px var(--sans);letter-spacing:.14em}.lightbox-caption{text-align:center;color:#ffe2ec;padding:14px 45px;font-size:15px;font-weight:700}.lightbox-nav{position:absolute;top:46%;border:1px solid rgba(255,255,255,.4);background:rgba(26,13,26,.48);border-radius:50%;color:white;width:38px;height:38px;font-size:22px;display:grid;place-items:center}.lightbox-nav.prev{right:14px}.lightbox-nav.next{left:14px}.toast{position:fixed;z-index:115;bottom:92px;left:50%;transform:translate(-50%,30px);background:#fff3f5;color:#65334a;border:1px solid #ebcad7;border-radius:14px;padding:13px 20px;box-shadow:0 20px 40px rgba(0,0,0,.17);font-size:13px;font-weight:700;opacity:0;visibility:hidden;pointer-events:none;transition:all .3s;max-width:90vw}.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+/* Animations */
+@keyframes rotate{to{transform:rotate(360deg)}}@keyframes heartbreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}@keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.8;transform:scale(1.2)}}@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes popin{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}@keyframes burst{0%{opacity:1;transform:translate(0,0) scale(.4)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.8)}}@keyframes rise{0%{opacity:0;transform:translateY(0) rotate(-12deg) scale(.6)}12%{opacity:1}100%{opacity:0;transform:translate(var(--drift),-115vh) rotate(42deg) scale(1.2)}}@keyframes heartbeat{0%,100%{transform:scale(1)}20%{transform:scale(1.15)}40%{transform:scale(1)}60%{transform:scale(1.12)}80%{transform:scale(1)}}
+/* Responsive */
+@media(max-width:1100px){.desktop-nav{gap:14px}.brand-text{font-size:17px}.since-pill{font-size:9px;padding:10px 12px}.galaxy-outer{margin-inline:0}.letter-inner{gap:45px}}
+@media(max-width:800px){.site-header{height:69px;padding:0 22px}.desktop-nav{display:none}.since-pill{display:none}.bottom-nav{position:fixed;z-index:25;bottom:0;left:0;right:0;height:calc(62px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:rgba(34,21,38,.91);backdrop-filter:blur(20px);border-top:1px solid rgba(255,211,230,.15);display:flex;align-items:center;justify-content:space-around;box-shadow:0 -10px 25px rgba(7,5,14,.1);direction:ltr}.bottom-nav a{height:58px;min-width:50px;color:#ba9caa;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;transition:color .2s}.bottom-nav a.active,.bottom-nav a:hover{color:#ffc3d6}.nav-icon{font:normal 25px/1 Georgia,serif}.bottom-nav small{font:600 9px var(--sans)}.hero{min-height:790px;padding:145px 0 85px}.hero-float-left,.hero-float-right{display:none}.hero-sculpture{width:320px;height:320px;top:31%}.hero-title{font-size:42px;line-height:1.7}.hero-paragraph{font-size:15px;line-height:2.3}.hero-scroll{margin-top:47px}.section-title{font-size:54px}.counter-section,.galaxy-section,.gallery-section,.reasons-section,.future-section{padding-top:90px;padding-bottom:95px}.counter-card{width:235px;min-height:240px}.galaxy-section .section-title,.gallery-section .section-title{text-align:left}.letter-section{padding:95px 0}.letter-inner{grid-template-columns:1fr;gap:25px}.letter-illustration{height:300px;order:1}.letter-copy{order:2;text-align:center}.letter-copy .section-intro{text-align:center;margin-inline:auto}.letter-copy .section-title{text-align:center}.letter-card{width:220px;height:255px}.letter-big-heart{font-size:70px}.reasons-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.final-section{padding:110px 0 110px;min-height:720px}.final-footer{margin-top:80px}.toast{bottom:78px}}
+@media(max-width:540px){.container{width:calc(100% - 40px)}.splash-inner{padding:75px 0 65px}.splash-top{top:24px;font-size:8px;letter-spacing:.15em}.envelope-stage{width:280px;height:216px;margin:10px auto}.envelope{transform:scale(.84);animation:none}.splash h1{font-size:26px;line-height:1.85}.splash-subtitle{font-size:12px;line-height:2}.splash-inner .eyebrow{font-size:8px;letter-spacing:.15em}.splash-footnote{font-size:8px}.site-header{padding:0 19px}.brand-text{font-size:17px}.brand-icon{width:29px;height:29px;font-size:16px}.hero{min-height:760px;padding:115px 0 95px}.hero-sculpture{top:34%;height:280px;width:280px}.hero-eyebrow{font-size:8px;letter-spacing:.23em}.hero-title{font-size:34px;line-height:1.75;margin:25px auto 12px}.hero-paragraph{font-size:13px;line-height:2.25}.hero-script{font-size:17px;line-height:1.7;margin:23px auto}.hero-cta{min-width:220px}.btn{font-size:12px;min-height:51px}.hero-scroll{font-size:8px;letter-spacing:.12em}.counter-section{padding:76px 0 92px}.section-title{font-size:43px;line-height:1.25}.section-intro,.section-subtitle{font-size:14px}.counter-section .section-subtitle{font-size:15px}.counter-wrap{margin:48px -8px 30px;gap:9px}.counter-card{border-radius:15px;width:calc((100vw - 64px)/2);min-height:207px;padding:15px 5px}.count-num{font-size:80px;margin:9px 0 4px}.counter-icon{font-size:17px}.counter-label{font-size:8px}.counter-arabic{font-size:9px}.counter-split{font-size:25px}.counter-caption{font-size:14px;line-height:2}.since-divider{font-size:8px;gap:8px;letter-spacing:.06em}.since-divider>span:first-child,.since-divider>span:last-child{width:21px}.galaxy-section{padding:85px 0}.section-topline{align-items:flex-start;gap:14px}.section-topline .eyebrow,.label-end{font-size:9px;letter-spacing:.1em}.galaxy-section .section-title{font-size:51px;margin:22px 0 10px}.galaxy-section .section-intro{font-size:13px}.galaxy-outer{margin-top:29px;border-radius:18px;min-height:288px}.galaxy-track{min-height:288px;padding:55px 11px 44px}.galaxy-node{width:120px;height:170px}.galaxy-node:after{left:calc(50% + 26px);width:97px}.galaxy-star{width:68px;height:68px}.galaxy-star svg{width:29px;height:29px}.galaxy-node:after{top:34px}.galaxy-label{font-size:11px}.galaxy-footnote{font-size:10px}.gallery-section{padding:89px 0 75px}.gallery-header{align-items:end}.gallery-section .section-title{font-size:43px}.gallery-section .section-intro{font-size:13px}.gallery-controls{padding-bottom:0}.round-btn{width:38px;height:38px;font-size:20px}.gallery-scroller{margin-top:26px;gap:20px;padding:12px 26px 34px}.polaroid{width:75vw;min-width:75vw;padding:10px 10px 14px}.photo-art{height:270px}.gallery-bottom p{font-size:8px;letter-spacing:.1em}.reasons-section{padding:82px 0 92px}.reasons-section .section-title{font-size:34px}.reasons-section .section-intro{margin-bottom:28px}.reasons-grid{gap:11px}.reason-card{min-height:182px;padding:15px 12px;border-radius:14px}.reason-icon{font-size:34px}.reason-message{font-size:12px;line-height:1.85}.reason-prompt{font-size:11px}.letter-section{padding:76px 0 87px}.letter-illustration{height:280px}.letter-copy .section-title{font-size:32px}.written-letter{font-size:13px}.letter-reveal{padding:22px}.future-section{padding:80px 0 96px}.future-section .section-title{font-size:34px}.future-section .section-intro{font-size:13px}.time-capsule{width:260px;height:260px;margin-top:65px}.capsule-top{font-size:8px}.capsule-symbol{margin:8px 0;font-size:50px}.capsule-symbol svg{height:50px;width:50px}.capsule-date{font-size:14px}.capsule-prompt{font-size:10px;margin-top:8px}.future-footnote{font-size:8px;line-height:1.8}.final-section{min-height:710px;padding:84px 0 110px}.final-heart-wrap{width:175px;height:166px}.final-heart{font-size:141px}.final-question{font-size:25px}.final-reveal h3{font-size:40px}.final-reveal p{font-size:14px}.final-footer{margin-top:85px;font-size:9px}.footer-line{width:28px}.modal{padding:16px}.modal-panel{padding:31px 20px}.modal-h{font-size:30px}.modal-p{font-size:14px}.lightbox-modal{padding:12px}.lightbox-main{min-height:340px}.lightbox-caption{font-size:13px}.global-sparkles{opacity:.27}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.envelope-stage.open .paper{transform:translateY(-95px)}.splash.opening .splash-inner h1,.splash.opening .splash-subtitle{opacity:0}.global-sparkles{display:none}}
+/* Contain decorative off-screen ornaments; in RTL any horizontal overflow can shift the viewport. */
+html,body{max-width:100%;overflow-x:clip}
+.splash{overflow:hidden}
+.hero{overflow:hidden}
+@media(max-height:640px){.splash{overflow-y:auto}.splash-inner{padding-top:90px;padding-bottom:35px}.envelope-stage{height:175px;margin-bottom:0}}
+
+</style>
+
+
+</head>
+<body>
+  <div class="global-sparkles" id="global-sparkles" aria-hidden="true"></div>
+  <div class="loader" id="loader" aria-hidden="true"><div class="loader-mark"><span class="loader-heart">&#9829;</span><span class="loader-ring"></span></div><p>Our Little Forever</p></div>
+  <div class="splash" id="splash" role="dialog" aria-modal="true" aria-labelledby="splash-title">
+    <div class="splash-sparkles" id="splash-sparkles" aria-hidden="true"></div>
+    <div class="splash-top"><span class="tiny-star">&#10022;</span> A LOVE LETTER, JUST FOR YOU <span class="tiny-star">&#10022;</span></div>
+    <div class="splash-inner">
+      <div class="envelope-stage" id="envelope-stage" aria-hidden="true">
+        <div class="envelope-shadow"></div>
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="paper"><span class="paper-mini">Our Little Forever</span><span class="paper-heart">&#9829;</span><span class="paper-lines"></span></div>
+          <div class="envelope-fold"></div>
+          <div class="envelope-face"></div>
+          <div class="envelope-seal"><span>&#9829;</span></div>
+        </div>
+      </div>
+      <p class="eyebrow with-line">A LITTLE SOMETHING FROM MY HEART</p>
+      <h1 id="splash-title"></h1>
+      <p class="splash-subtitle" id="splash-subtitle"></p>
+      <button type="button" class="btn btn-ivory splash-button" id="splash-open"><span id="splash-open-text"></span><span class="arrow-icon">&#8599;</span></button>
+      <p class="splash-footnote">MADE WITH LOVE <span class="interpunct">&#183;</span> SINCE <span id="intro-since">01.06.2026</span></p>
+    </div>
+    <span class="splash-corner corner-a">&#10022;</span><span class="splash-corner corner-b">&#10022;</span>
+  </div>
+  <header class="site-header" id="topbar">
+    <a class="brand" href="#welcome" aria-label="Our Little Forever - top"><span class="brand-icon">&#9829;</span><span class="brand-text">Our Little <i>Forever</i><span class="brand-end">.</span></span></a>
+    <nav class="desktop-nav" aria-label="Site sections"><a href="#counter" data-nav="counter">Our time</a><a href="#galaxy" data-nav="galaxy">Our galaxy</a><a href="#memories" data-nav="memories">Memories</a><a href="#letter" data-nav="letter">Love letter</a></nav>
+    <div class="header-right"><span class="since-pill"><span class="pill-dot"></span> Since 01.06.2026</span><button class="music-btn" id="music-btn" type="button" aria-label="Toggle music" hidden></button></div>
+  </header>
+  <main id="main-content">
+    <section class="hero section-dark" id="welcome">
+      <div class="hero-dust dust-left" aria-hidden="true"></div><div class="hero-dust dust-right" aria-hidden="true"></div>
+      <div class="hero-sculpture" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><div class="hero-center-heart">&#9829;</div><span class="orbit-star star-a">&#10022;</span><span class="orbit-star star-b">&#10022;</span><span class="orbit-star star-c">&#10022;</span></div>
+      <div class="hero-content container">
+        <p class="eyebrow hero-eyebrow" id="welcome-eyebrow">&#10022; A STORY WRITTEN IN THE STARS &#10022;</p>
+        <h2 class="hero-title" id="welcome-title"></h2>
+        <p class="hero-paragraph" id="welcome-message"></p>
+        <p class="hero-script" id="welcome-ending"></p>
+        <a href="#counter" class="btn btn-pink hero-cta" id="welcome-cta"><span id="welcome-cta-text"></span><span class="btn-arrow">&#8592;</span></a>
+        <div class="hero-scroll"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span></div>
+      </div>
+      <div class="hero-float-left" id="welcome-mark">01.06.2026</div>
+      <div class="hero-float-right">A LOVE THAT GROWS EVERY DAY</div>
+    </section>
+    <section class="counter-section section-dark" id="counter">
+      <div class="container narrow center">
+        <p class="eyebrow reveal">01 / OUR TIME TOGETHER</p>
+        <h2 class="section-title reveal">Every day, <em>more in love.</em></h2>
+        <p class="section-subtitle reveal">A little count of our beautiful journey</p>
+        <div class="counter-wrap reveal" id="counter-wrap">
+          <div class="counter-glow"></div>
+          <div class="counter-card"><span class="card-shine"></span><span class="counter-icon">&#9829;</span><strong class="count-num" id="months-value" aria-live="polite">0</strong><span class="counter-label">MONTHS</span><span class="counter-arabic" id="months-label"></span></div>
+          <div class="counter-split" aria-hidden="true"><span>&amp;</span></div>
+          <div class="counter-card"><span class="card-shine"></span><span class="counter-icon">&#10047;</span><strong class="count-num" id="days-value" aria-live="polite">0</strong><span class="counter-label">DAYS</span><span class="counter-arabic" id="days-label"></span></div>
+        </div>
+        <p class="counter-caption reveal" id="counter-message"></p>
+        <div class="since-divider reveal"><span></span><span>Together Since <span id="counter-since">01.06.2026</span></span><span></span></div>
+      </div>
+      <span class="counter-deco deco-a" aria-hidden="true">&#10022;</span><span class="counter-deco deco-b" aria-hidden="true">&#10022;</span>
+    </section>
+    <section class="galaxy-section section-dark" id="galaxy">
+      <div class="container">
+        <div class="section-topline reveal"><p class="eyebrow">02 / CONSTELLATION OF US</p><span class="label-end">ONE STAR AT A TIME &#10022;</span></div>
+        <h2 class="section-title reveal">Our little <em>galaxy.</em></h2>
+        <p class="section-intro reveal" id="galaxy-intro"></p>
+        <div class="galaxy-outer reveal"><div class="galaxy-fog"></div><div class="galaxy-track" id="galaxy-track" aria-label="Monthly relationship memories"></div></div>
+        <div class="galaxy-footnote"><span class="legend-dot unlocked"></span><span id="galaxy-legend-open"></span><span class="legend-dot locked"></span><span id="galaxy-legend-locked"></span></div>
+      </div>
+    </section>
+    <section class="gallery-section section-light" id="memories">
+      <div class="container gallery-header"><div><p class="eyebrow dark-eyebrow reveal">03 / LITTLE MOMENTS, BIG LOVE</p><h2 class="section-title dark-title reveal">Collected <em>with love.</em></h2><p class="section-intro reveal" id="gallery-title"></p></div><div class="gallery-controls reveal"><button class="round-btn" id="gallery-prev" type="button" aria-label="Previous photo">&#8594;</button><button class="round-btn" id="gallery-next" type="button" aria-label="Next photo">&#8592;</button></div></div>
+      <div class="gallery-scroller" id="gallery-scroller" dir="rtl" aria-label="Our photo gallery"></div>
+      <div class="gallery-bottom container"><p>OUR MEMORIES, OUR MAGIC <span>&#10022;</span></p><div class="gallery-dots" id="gallery-dots"></div></div>
+    </section>
+    <section class="reasons-section section-cream" id="reasons"><div class="container"><div class="center"><p class="eyebrow dark-eyebrow reveal">04 / THE LITTLE THINGS</p><h2 class="section-title dark-title reveal" id="reasons-title"></h2><p class="section-intro reveal" id="reasons-intro"></p></div><div class="reasons-grid" id="reasons-grid"></div><p class="reasons-footnote reveal">P.S. THE LIST WILL NEVER END. &#9829;</p></div></section>
+    <section class="letter-section section-dark" id="letter"><div class="letter-halo" aria-hidden="true"></div><div class="container letter-inner"><div class="letter-illustration reveal"><div class="letter-glow"></div><div class="letter-card"><span class="letter-small-cap">TO MY FAVORITE PERSON</span><span class="letter-big-heart">&#9829;</span><span class="letter-sign">Yours, always.</span></div><span class="letter-spark one">&#10022;</span><span class="letter-spark two">&#10022;</span><span class="letter-spark three">&#10022;</span></div><div class="letter-copy reveal"><p class="eyebrow">05 / A NOTE FROM MY HEART</p><h2 class="section-title" id="secret-title"></h2><p class="section-intro" id="secret-intro"></p><button type="button" class="btn btn-pink" id="secret-open"><span id="secret-button-text"></span><span>&#8592;</span></button><div class="letter-reveal" id="letter-reveal" hidden><div class="written-letter" id="written-letter"></div><span class="letter-signature">With all my heart, &#9829;</span></div></div></div></section>
+    <section class="future-section section-dark" id="future"><div class="container future-inner"><div class="center"><p class="eyebrow reveal">06 / A PROMISE TO TOMORROW</p><h2 class="section-title reveal" id="future-title"></h2><p class="section-intro reveal" id="future-teaser"></p></div><button type="button" class="time-capsule reveal" id="future-capsule" aria-label="Anniversary time capsule"><span class="capsule-ring ring-one"></span><span class="capsule-ring ring-two"></span><span class="capsule-top">SEALED WITH LOVE</span><span class="capsule-symbol" id="capsule-symbol"></span><span class="capsule-date" id="capsule-date">01.06.2027</span><span class="capsule-prompt" id="capsule-prompt"></span></button><div class="future-message" id="future-message" hidden></div><p class="future-footnote">SOME THINGS ARE WORTH WAITING FOR &#10022;</p></div></section>
+    <section class="final-section section-dark" id="surprise"><div class="final-shimmer" id="final-shimmer" aria-hidden="true"></div><div class="container center final-inner"><p class="eyebrow reveal">07 / THE BEST PART OF MY LIFE</p><div class="final-heart-wrap reveal" id="final-heart-wrap"><div class="heartbeat-halo"></div><div class="final-heart" aria-hidden="true">&#9829;</div></div><h2 class="final-question reveal" id="final-question"></h2><button class="btn btn-ivory reveal" id="final-open" type="button"><span id="final-button-text"></span><span>&#8592;</span></button><div class="final-reveal" id="final-reveal" hidden><h3 id="final-message"></h3><p id="final-subtitle"></p><span id="final-signature"></span></div><div class="final-footer"><span class="footer-line"></span><span>OUR LITTLE FOREVER <span class="footer-heart">&#9829;</span> 2026</span><span class="footer-line"></span></div></div></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Mobile section navigation"><a href="#welcome" aria-label="Welcome" data-bottom="welcome"><span class="nav-icon">&#9829;</span><small>Home</small></a><a href="#counter" aria-label="Our time" data-bottom="counter"><span class="nav-icon">&#9681;</span><small>Time</small></a><a href="#galaxy" aria-label="Our galaxy" data-bottom="galaxy"><span class="nav-icon">&#10022;</span><small>Stars</small></a><a href="#memories" aria-label="Memories" data-bottom="memories"><span class="nav-icon">&#9638;</span><small>Photos</small></a><a href="#letter" aria-label="Love letter" data-bottom="letter"><span class="nav-icon">&#9993;</span><small>Letter</small></a></nav>
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-backdrop" id="modal-backdrop"></div><div class="modal-panel" id="modal-panel"><button class="modal-close" id="modal-close" type="button" aria-label="Close">&times;</button><div id="modal-content"></div></div></div>
+  <div class="toast" id="toast" aria-live="polite"></div>
+<script>
+window.loveConfig = {
+  "girlfriendName": "",
+  "myName": "",
+  "relationshipStartDate": "2026-06-01",
+  "timezone": "Africa/Tunis",
+  "websiteTitle": "Our Little Forever",
+  "introEyebrow": "ONLY FOR YOU",
+  "introTitle": "\u0639\u0646\u062f\u064a \u0644\u064a\u0643 \u062d\u0627\u062c\u0629 \u0635\u063a\u064a\u0631\u0629... \u0623\u0645\u0627 \u0645\u0639\u0645\u0648\u0644\u0629 \u0628\u062d\u0628 \u0643\u0628\u064a\u0631 \u2764\ufe0f",
+  "introSubtitle": "\u062d\u0636\u0651\u0631\u062a\u0644\u0643 \u0645\u0641\u0627\u062c\u0623\u0629 \u0645\u0646 \u0642\u0644\u0628\u064a\u060c \u062e\u0627\u0637\u0631 \u0625\u0646\u062a\u0650 \u062a\u0633\u062a\u0627\u0647\u0644\u064a \u0643\u0644 \u062d\u0627\u062c\u0629 \u062d\u0644\u0648\u0629.",
+  "introButton": "\u0627\u0641\u062a\u062d\u064a \u0647\u062f\u064a\u062a\u0643 \ud83d\udc8c",
+  "welcomeTitle": "\u0625\u0644\u0649 \u0623\u062c\u0645\u0644 \u0625\u0646\u0633\u0627\u0646\u0629 \u062f\u062e\u0644\u062a \u062d\u064a\u0627\u062a\u064a \u2764\ufe0f",
+  "welcomeMessage": "\u0645\u0646 \u0646\u0647\u0627\u0631 1 \u062c\u0648\u0627\u0646 2026\u060c \u0628\u062f\u0627\u062a \u062d\u0643\u0627\u064a\u0629 \u0645\u062e\u062a\u0644\u0641\u0629 \u0639\u0644\u0649 \u0627\u0644\u062d\u0643\u0627\u064a\u0627\u062a \u0627\u0644\u0643\u0644...\n\u062d\u0643\u0627\u064a\u0629 \u0641\u064a\u0647\u0627 \u0623\u0646\u0627 \u0648\u0625\u0646\u062a\u0650\u060c \u0641\u064a\u0647\u0627 \u0636\u062d\u0643\u062a\u0646\u0627\u060c \u0630\u0643\u0631\u064a\u0627\u062a\u0646\u0627\u060c \u0648\u0644\u062d\u0638\u0627\u062a\u0646\u0627 \u0627\u0644\u0635\u063a\u064a\u0631\u0629 \u0627\u0644\u0644\u064a \u0639\u0646\u062f\u0647\u0627 \u0623\u0643\u0628\u0631 \u0628\u0644\u0627\u0635\u0629 \u0641\u064a \u0642\u0644\u0628\u064a.\n\u0639\u0645\u0644\u062a\u0644\u0643 \u0627\u0644\u0645\u0643\u0627\u0646 \u0647\u0630\u0627 \u0628\u0627\u0634 \u0643\u0644 \u0645\u0631\u0629 \u062a\u062f\u062e\u0644\u064a\u0644\u0648 \u062a\u062a\u0641\u0643\u0631\u064a \u0642\u062f\u0627\u0634 \u0625\u0646\u062a\u0650 \u063a\u0627\u0644\u064a\u0629 \u0639\u0646\u062f\u064a.",
+  "welcomeEnding": "Welcome to Our Little Forever, My Love \u2661",
+  "welcomeButton": "\u064a\u0644\u0627 \u0646\u0643\u062a\u0634\u0641\u0648 \u062d\u0643\u0627\u064a\u062a\u0646\u0627 \u2764\ufe0f",
+  "counterMessage": "\u0643\u0644 \u0634\u0647\u0631 \u064a\u0641\u0648\u062a \u0646\u062d\u0628\u0643 \u0623\u0643\u062b\u0631\u060c \u0648\u0643\u0644 \u0646\u0647\u0627\u0631 \u0645\u0639\u0627\u0643 \u064a\u0632\u064a\u062f \u064a\u062d\u0644\u0651\u064a \u062d\u064a\u0627\u062a\u064a \u2764\ufe0f",
+  "galleryTitle": "\u0630\u0643\u0631\u064a\u0627\u062a\u0646\u0627 \u0627\u0644\u0635\u063a\u064a\u0631\u0629\u060c \u0627\u0644\u0644\u064a \u0639\u0646\u062f\u064a \u0623\u063a\u0644\u0649 \u0645\u0646 \u0627\u0644\u062f\u0646\u064a\u0627 \u2764\ufe0f",
+  "loveReasonsTitle": "\u062a\u0639\u0631\u0641\u064a \u0639\u0644\u0627\u0634 \u0646\u062d\u0628\u0643\u061f \u2764\ufe0f",
+  "loveReasons": [
+    "\u062e\u0627\u0637\u0631 \u0636\u062d\u0643\u062a\u0643 \u0648\u062d\u062f\u0647\u0627 \u062a\u0646\u062c\u0645 \u062a\u0628\u062f\u0651\u0644 \u0646\u0647\u0627\u0631\u064a \u0643\u0627\u0645\u0644.",
+    "\u062e\u0627\u0637\u0631 \u0645\u0639\u0627\u0643 \u0646\u062d\u0633 \u0631\u0648\u062d\u064a \u0645\u0631\u062a\u0627\u062d \u0648\u0641\u064a \u0628\u0644\u0627\u0635\u062a\u064a.",
+    "\u062e\u0627\u0637\u0631 \u0625\u0646\u062a\u0650 \u0645\u0648\u0634 \u0643\u0627\u0646 \u062d\u0628\u064a\u0628\u062a\u064a\u060c \u0625\u0646\u062a\u0650 \u0632\u0627\u062f\u0629 \u0635\u0627\u062d\u0628\u062a\u064a \u0648\u0623\u0642\u0631\u0628 \u0625\u0646\u0633\u0627\u0646\u0629 \u0644\u0642\u0644\u0628\u064a.",
+    "\u062e\u0627\u0637\u0631 \u062d\u062a\u0649 \u0641\u064a \u0623\u0635\u0639\u0628 \u0646\u0647\u0627\u0631\u060c \u0643\u0644\u0645\u0629 \u0645\u0646\u0643 \u062a\u0646\u062c\u0645 \u062a\u0641\u0631\u0651\u062d\u0646\u064a.",
+    "\u062e\u0627\u0637\u0631 \u0625\u0646\u062a\u0650 \u0623\u062d\u0644\u0649 \u0635\u062f\u0641\u0629 \u0635\u0627\u0631\u062a\u0644\u064a.",
+    "\u0648\u062e\u0627\u0637\u0631 \u0628\u0628\u0633\u0627\u0637\u0629... \u0625\u0646\u062a\u0650 \u0625\u0646\u062a\u0650 \u2764\ufe0f"
+  ],
+  "secretTitle": "\u0641\u0645\u0627 \u0643\u0644\u0627\u0645 \u0646\u062d\u0628 \u0646\u0642\u0648\u0644\u0647\u0648\u0644\u0643 \u0645\u0646 \u0642\u0644\u0628\u064a...",
+  "secretButton": "\u0627\u0641\u062a\u062d\u064a \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0627\u0644\u0633\u0631\u064a\u0629 \ud83d\udc8c",
+  "loveLetter": "\u062d\u0628\u064a\u0628\u062a\u064a \u2764\ufe0f\n\n\u0645\u0646 \u0646\u0647\u0627\u0631 1 \u062c\u0648\u0627\u0646 2026\u060c \u0648\u0625\u0646\u062a\u0650 \u0648\u0644\u064a\u062a\u0650 \u062c\u0632\u0621 \u0645\u0646 \u062d\u064a\u0627\u062a\u064a \u0648\u0645\u0646 \u0623\u062d\u0644\u0649 \u062a\u0641\u0627\u0635\u064a\u0644 \u0646\u0647\u0627\u0631\u064a.\n\n\u064a\u0645\u0643\u0646 \u0645\u0627 \u0646\u0639\u0631\u0641\u0634 \u062f\u064a\u0645\u0627 \u0643\u064a\u0641\u0627\u0634 \u0646\u0639\u0628\u0651\u0631\u0644\u0643 \u0639\u0644\u0649 \u0643\u0644 \u0634\u064a \u0646\u062d\u0633\u0651 \u0628\u064a\u0647\u060c \u0623\u0645\u0627 \u0646\u062d\u0628\u0643 \u062a\u0639\u0631\u0641\u064a \u0642\u062f\u0627\u0634 \u0625\u0646\u062a\u0650 \u063a\u0627\u0644\u064a\u0629 \u0639\u0646\u062f\u064a.\n\n\u0646\u062d\u0628 \u0636\u062d\u0643\u062a\u0643\u060c \u0646\u062d\u0628 \u0643\u0644\u0627\u0645\u0643\u060c \u0646\u062d\u0628 \u0627\u0644\u0644\u062d\u0638\u0627\u062a \u0627\u0644\u0644\u064a \u0646\u0639\u062f\u0651\u064a\u0648\u0647\u0627 \u0645\u0639 \u0628\u0639\u0636\u0646\u0627\u060c \u0648\u062d\u062a\u0649 \u0623\u0635\u063a\u0631 \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0644\u064a \u064a\u0645\u0643\u0646 \u0625\u0646\u062a\u0650 \u0645\u0627 \u062a\u0641\u064a\u0642\u064a\u0634 \u0628\u064a\u0647\u0627.\n\n\u0645\u0639\u0627\u0643 \u062a\u0639\u0644\u0651\u0645\u062a \u0627\u0644\u0644\u064a \u0627\u0644\u0633\u0639\u0627\u062f\u0629 \u0645\u0648\u0634 \u0644\u0627\u0632\u0645 \u062a\u0643\u0648\u0646 \u0641\u064a \u062d\u0627\u062c\u0627\u062a \u0643\u0628\u064a\u0631\u0629. \u0633\u0627\u0639\u0627\u062a \u062a\u0643\u0648\u0646 \u0641\u064a \u0643\u0644\u0645\u0629\u060c \u0641\u064a \u0636\u062d\u0643\u0629\u060c \u0641\u064a \u0631\u0633\u0627\u0644\u0629\u060c \u0648\u0644\u0627 \u0641\u064a \u0648\u062c\u0648\u062f \u0625\u0646\u0633\u0627\u0646\u0629 \u062a\u062d\u0628\u0647\u0627.\n\n\u0645\u0627 \u0646\u0639\u0631\u0641\u0634 \u0634\u0646\u0648\u0629 \u0645\u062e\u0628\u0651\u064a\u0644\u0646\u0627 \u0627\u0644\u0645\u0633\u062a\u0642\u0628\u0644\u060c \u0623\u0645\u0627 \u0646\u062a\u0645\u0646\u0651\u0649 \u0646\u0639\u064a\u0634\u0648\u0627 \u0645\u0639 \u0628\u0639\u0636\u0646\u0627 \u0628\u0631\u0634\u0627 \u0644\u062d\u0638\u0627\u062a \u062d\u0644\u0648\u0629 \u0648\u0646\u0635\u0646\u0639\u0648\u0627 \u0630\u0643\u0631\u064a\u0627\u062a \u062c\u062f\u064a\u062f\u0629.\n\n\u0648\u0639\u0645\u0644\u062a\u0644\u0643 \u0627\u0644\u0645\u0648\u0642\u0639 \u0647\u0630\u0627 \u0628\u0627\u0634 \u0643\u0644 \u0645\u0631\u0629 \u062a\u0641\u062a\u062d\u064a\u0647\u060c \u062a\u0639\u0631\u0641\u064a \u0627\u0644\u0644\u064a \u0641\u0645\u0627 \u0634\u0643\u0648\u0646 \u064a\u062d\u0628\u0651\u0643\u060c \u064a\u0641\u0631\u062d \u0628\u064a\u0643\u060c \u0648\u064a\u0639\u062a\u0628\u0631\u0643 \u0647\u062f\u064a\u0629 \u062c\u0645\u064a\u0644\u0629 \u0641\u064a \u062d\u064a\u0627\u062a\u0648.\n\n\u0646\u062d\u0628\u0643 \u0628\u0631\u0634\u0627 \u064a\u0627 \u0623\u063a\u0644\u0649 \u0625\u0646\u0633\u0627\u0646\u0629 \u0639\u0646\u062f\u064a. \u2764\ufe0f",
+  "futureTitle": "\u0631\u0633\u0627\u0644\u0629 \u0644\u064a\u0646\u0627 \u0641\u064a \u0627\u0644\u0645\u0633\u062a\u0642\u0628\u0644 \ud83d\udc9e",
+  "futureTeaser": "\u0631\u0633\u0627\u0644\u0629 \u0645\u062e\u0628\u0651\u064a\u0629 \u0644\u0646\u0647\u0627\u0631 \u0646\u0643\u0645\u0651\u0644\u0648\u0627 \u0639\u0627\u0645 \u0645\u0639 \u0628\u0639\u0636\u0646\u0627 \u2764\ufe0f",
+  "futureLetter": "\u0643\u0644 \u0634\u0647\u0631 \u064a\u0641\u0648\u062a \u0646\u062d\u0628\u0643 \u0623\u0643\u062b\u0631\u060c \u0648\u0643\u0644 \u0646\u0647\u0627\u0631 \u0645\u0639\u0627\u0643 \u064a\u0632\u064a\u062f \u064a\u062d\u0644\u0651\u064a \u062d\u064a\u0627\u062a\u064a \u2764\ufe0f\n\n\u0646\u062d\u0628\u0643 \u0628\u0631\u0634\u0627 \u064a\u0627 \u0623\u063a\u0644\u0649 \u0625\u0646\u0633\u0627\u0646\u0629 \u0639\u0646\u062f\u064a. \u2764\ufe0f",
+  "unlockDate": "2027-06-01",
+  "finalQuestion": "\u062a\u0639\u0631\u0641\u064a \u0634\u0646\u0648\u0651\u0629 \u0623\u062d\u0644\u0649 \u062d\u0627\u062c\u0629 \u0635\u0627\u0631\u062a\u0644\u064a \u0641\u064a \u062d\u064a\u0627\u062a\u064a\u061f",
+  "finalButton": "\u0627\u0636\u063a\u0637\u064a \u0648\u0627\u0643\u062a\u0634\u0641\u064a \u2764\ufe0f",
+  "finalMessage": "\u0625\u0646\u062a\u0650. \u0648\u062f\u0627\u0626\u0645\u064b\u0627 \u0625\u0646\u062a\u0650. \u2764\ufe0f",
+  "finalSubtitle": "\u0648\u0645\u0647\u0645\u0627 \u0627\u0644\u0623\u064a\u0627\u0645 \u062a\u0639\u062f\u0651\u064a\u060c \u0646\u062a\u0645\u0646\u0651\u0649 \u062f\u064a\u0645\u0627 \u0646\u0644\u0642\u0627\u0643 \u0645\u0639\u0627\u064a\u0627 \u0641\u064a \u0623\u062c\u0645\u0644 \u0644\u062d\u0638\u0627\u062a \u062d\u064a\u0627\u062a\u064a.",
+  "finalSignature": "Forever grateful for you. \u2661",
+  "galleryPhotos": [
+    {
+      "src": "",
+      "caption": "\u0646\u0647\u0627\u0631 \u0639\u0645\u0631\u064a \u0645\u0627 \u0646\u0646\u0633\u0627\u0647 \u2764\ufe0f",
+      "date": ""
+    },
+    {
+      "src": "",
+      "caption": "\u0636\u062d\u0643\u062a\u0643 \u0647\u0646\u0627 \u0643\u0627\u0646\u062a \u0623\u062d\u0644\u0649 \u062d\u0627\u062c\u0629.",
+      "date": ""
+    },
+    {
+      "src": "",
+      "caption": "\u0644\u062d\u0638\u0629 \u062a\u0645\u0646\u0651\u064a\u062a \u0627\u0644\u0648\u0642\u062a \u064a\u0648\u0642\u0641 \u0641\u064a\u0647\u0627.",
+      "date": ""
+    },
+    {
+      "src": "",
+      "caption": "\u0645\u0639\u0627\u0643 \u062d\u062a\u0649 \u0627\u0644\u0644\u062d\u0638\u0627\u062a \u0627\u0644\u0639\u0627\u062f\u064a\u0629 \u062a\u0648\u0644\u0651\u064a \u0645\u0645\u064a\u0632\u0629.",
+      "date": ""
+    },
+    {
+      "src": "",
+      "caption": "\u0646\u0647\u0627\u0631 \u0639\u0645\u0631\u064a \u0645\u0627 \u0646\u0646\u0633\u0627\u0647 \u2764\ufe0f",
+      "date": ""
+    },
+    {
+      "src": "",
+      "caption": "\u0636\u062d\u0643\u062a\u0643 \u0647\u0646\u0627 \u0643\u0627\u0646\u062a \u0623\u062d\u0644\u0649 \u062d\u0627\u062c\u0629.",
+      "date": ""
+    }
+  ],
+  "monthlyMemories": [
+    {
+      "month": 0,
+      "title": "Our Beginning",
+      "message": "\u0645\u0646 \u0646\u0647\u0627\u0631 1 \u062c\u0648\u0627\u0646 2026\u060c \u0628\u062f\u0627\u062a \u062d\u0643\u0627\u064a\u0629 \u0645\u062e\u062a\u0644\u0641\u0629 \u0639\u0644\u0649 \u0627\u0644\u062d\u0643\u0627\u064a\u0627\u062a \u0627\u0644\u0643\u0644..."
+    },
+    {
+      "month": 1,
+      "title": "One Month Together",
+      "message": "\u0643\u0644 \u0634\u0647\u0631 \u064a\u0641\u0648\u062a \u0646\u062d\u0628\u0643 \u0623\u0643\u062b\u0631\u060c \u0648\u0643\u0644 \u0646\u0647\u0627\u0631 \u0645\u0639\u0627\u0643 \u064a\u0632\u064a\u062f \u064a\u062d\u0644\u0651\u064a \u062d\u064a\u0627\u062a\u064a \u2764\ufe0f"
+    },
+    {
+      "month": 2,
+      "title": "Two Months Together",
+      "message": "\u062d\u0643\u0627\u064a\u0629 \u0641\u064a\u0647\u0627 \u0623\u0646\u0627 \u0648\u0625\u0646\u062a\u0650\u060c \u0641\u064a\u0647\u0627 \u0636\u062d\u0643\u062a\u0646\u0627\u060c \u0630\u0643\u0631\u064a\u0627\u062a\u0646\u0627\u060c \u0648\u0644\u062d\u0638\u0627\u062a\u0646\u0627 \u0627\u0644\u0635\u063a\u064a\u0631\u0629 \u0627\u0644\u0644\u064a \u0639\u0646\u062f\u0647\u0627 \u0623\u0643\u0628\u0631 \u0628\u0644\u0627\u0635\u0629 \u0641\u064a \u0642\u0644\u0628\u064a."
+    },
+    {
+      "month": 3,
+      "title": "Three Months Together",
+      "message": "\u0639\u0645\u0644\u062a\u0644\u0643 \u0627\u0644\u0645\u0643\u0627\u0646 \u0647\u0630\u0627 \u0628\u0627\u0634 \u0643\u0644 \u0645\u0631\u0629 \u062a\u062f\u062e\u0644\u064a\u0644\u0648 \u062a\u062a\u0641\u0643\u0631\u064a \u0642\u062f\u0627\u0634 \u0625\u0646\u062a\u0650 \u063a\u0627\u0644\u064a\u0629 \u0639\u0646\u062f\u064a."
+    },
+    {
+      "month": 4,
+      "title": "Four Months Together",
+      "message": "\u062e\u0627\u0637\u0631 \u0625\u0646\u062a\u0650 \u0623\u062d\u0644\u0649 \u0635\u062f\u0641\u0629 \u0635\u0627\u0631\u062a\u0644\u064a."
+    }
+  ],
+  "backgroundMusic": ""
+};
+
+</script>
+<script>
+/* Our Little Forever - no backend, tracking, or external JS dependencies. */
+(() => {
+  'use strict';
+  const c = window.loveConfig;
+  if (!c) { console.error('Missing loveConfig.js'); return; }
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+  const el = (tag, cls, txt) => { const node = document.createElement(tag); if (cls) node.className = cls; if (txt !== undefined) node.textContent = txt; return node; };
+  const set = (id, value) => { const node = document.getElementById(id); if (node) node.textContent = value || ''; };
+  const safe = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const name = c.girlfriendName.trim();
+  document.title = c.websiteTitle + (name ? ' - ' + name : '');
+  if(c.websiteTitle!=='Our Little Forever') $('.brand-text').textContent=c.websiteTitle;
+  if(c.myName) $('.letter-signature').textContent='With all my heart, '+c.myName+' ♥';
+  const nowInTunis = () => {
+    const fields = new Intl.DateTimeFormat('en-US', {timeZone:c.timezone, year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
+    const n = type => Number(fields.find(f => f.type === type).value);
+    return {year:n('year'), month:n('month'), day:n('day')};
+  };
+  const parseDate = s => { const [year,month,day] = s.split('-').map(Number); return {year,month,day}; };
+  const stamp = d => Date.UTC(d.year,d.month-1,d.day);
+  const monthAnniversary = (start, n) => {
+    const first = new Date(Date.UTC(start.year,start.month - 1 + n,1));
+    const year = first.getUTCFullYear(), month = first.getUTCMonth()+1;
+    const lastDay = new Date(Date.UTC(year,month,0)).getUTCDate();
+    return {year,month,day:Math.min(start.day,lastDay)};
+  };
+  const calendarDiff = (start, date) => {
+    if (stamp(date) < stamp(start)) return {months:0, days:0, future:true};
+    let months = (date.year-start.year)*12 + date.month-start.month;
+    if (stamp(monthAnniversary(start,months)) > stamp(date)) months--;
+    const days = Math.floor((stamp(date) - stamp(monthAnniversary(start, months))) / 86400000);
+    return {months,days,future:false};
+  };
+  const start = parseDate(c.relationshipStartDate);
+  let today = nowInTunis(), current = calendarDiff(start,today), previousDateKey = '';
+  const dateLabel = date => {
+    const d = parseDate(date);
+    return String(d.day).padStart(2,'0') + '.' + String(d.month).padStart(2,'0') + '.' + d.year;
+  };
+  const dateKey = d => [d.year,String(d.month).padStart(2,'0'),String(d.day).padStart(2,'0')].join('-');
+  const monthText = n => ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][n-1];
+  const monthLabel = d => monthText(d.month) + ' ' + d.year;
+  const text = (id, v) => set(id,v);
+
+  /* Populate all changeable romantic copy from loveConfig.js. */
+  text('splash-title', c.introTitle); text('splash-subtitle',c.introSubtitle); text('splash-open-text',c.introButton);
+  text('welcome-title',c.welcomeTitle);
+  text('welcome-ending',c.welcomeEnding);text('welcome-cta-text',c.welcomeButton);
+  text('counter-message',c.counterMessage);
+  text('months-label','\u0623\u0634\u0647\u0631'); text('days-label','\u0623\u064a\u0651\u0627\u0645');
+  text('gallery-title',c.galleryTitle);
+  text('reasons-title',c.loveReasonsTitle);
+  text('secret-title',c.secretTitle);text('secret-button-text',c.secretButton);
+  text('future-title',c.futureTitle);text('future-teaser',c.futureTeaser);
+  text('final-question',c.finalQuestion);text('final-button-text',c.finalButton);
+  text('final-message',c.finalMessage);text('final-subtitle',c.finalSubtitle);text('final-signature',c.finalSignature);
+  text('galaxy-intro',c.counterMessage);
+  text('reasons-intro',c.welcomeMessage.split('\n').slice(-1)[0]);
+  text('secret-intro',c.loveLetter.split('\n').filter(x=>x.trim()).slice(1,2)[0] || c.introSubtitle);
+  text('welcome-mark',dateLabel(c.relationshipStartDate));
+  text('intro-since',dateLabel(c.relationshipStartDate));
+  text('counter-since',dateLabel(c.relationshipStartDate));
+  if(name) text('welcome-eyebrow','\u2726 JUST FOR ' + name.toUpperCase() + ' \u2726');
+  const headerDate = dateLabel(c.relationshipStartDate);
+  $$('.since-pill').forEach(node=>{ node.innerHTML = '<span class="pill-dot"></span> Since '+safe(headerDate); });
+
+  /* Screen transitions and breathing starlight. */
+  const addSparkles = (target, amount) => {
+    if(reduceMotion) return;
+    for(let i=0;i<amount;i++){
+      const node=el('span','sparkle');
+      node.style.left=(Math.random()*100).toFixed(1)+'%';
+      node.style.top=(Math.random()*100).toFixed(1)+'%';
+      node.style.setProperty('--dur',(2.5+Math.random()*5).toFixed(2)+'s');
+      node.style.setProperty('--delay',(-Math.random()*8).toFixed(2)+'s');
+      target.append(node);
+    }
+  };
+  addSparkles($('#global-sparkles'),52); addSparkles($('#splash-sparkles'),27);
+  document.body.classList.add('no-scroll');
+  const showWords = () => {
+    const target = $('#welcome-message');
+    const whole = c.welcomeMessage;
+    target.setAttribute('aria-label',whole);
+    if(reduceMotion){target.textContent=whole;return;}
+    const segmenter=typeof Intl.Segmenter==='function' ? new Intl.Segmenter('ar',{granularity:'grapheme'}) : null;
+    const letters=segmenter ? Array.from(segmenter.segment(whole),s=>s.segment) : Array.from(whole);
+    let i=0;
+    const timer=setInterval(()=>{if(i>=letters.length){clearInterval(timer);return;}target.textContent+=letters.slice(i,i+3).join('');i+=3;},36);
+  };
+  const burst = (host,num=18) => {
+    if(reduceMotion)return;
+    const r=host.getBoundingClientRect();
+    for(let i=0;i<num;i++){
+      const particle=el('span','opening-burst',i%4===0?'\u2726':'\u2665');
+      particle.style.left=(r.width/2)+'px';particle.style.top=(r.height/2-80)+'px';
+      const theta=Math.random()*Math.PI*2,dist=65+Math.random()*160;
+      particle.style.setProperty('--tx',Math.round(Math.cos(theta)*dist)+'px');
+      particle.style.setProperty('--ty',Math.round(Math.sin(theta)*dist)+'px');
+      particle.style.animationDelay=(Math.random()*.35)+'s';
+      host.append(particle);setTimeout(()=>particle.remove(),2100);
+    }
+  };
+  function enterExperience(){
+    const splash=$('#splash');
+    if(splash.classList.contains('opening'))return;
+    splash.classList.add('opening');
+    $('#envelope-stage').classList.add('open');
+    burst($('#splash'),22);
+    setTimeout(()=>{
+      splash.classList.add('exit');
+      splash.setAttribute('aria-hidden','true');
+      document.body.classList.remove('no-scroll');
+      showWords();
+      $('#welcome-cta').focus({preventScroll:true});
+    },reduceMotion?300:2150);
+    setTimeout(()=>splash.remove(),reduceMotion?500:3300);
+  }
+  $('#splash-open').addEventListener('click',enterExperience);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape' && !$('#splash')?.classList.contains('exit') && !$('#splash')?.classList.contains('opening'))enterExperience();});
+  window.addEventListener('load',()=>setTimeout(()=>$('#loader').classList.add('off'),350));
+  setTimeout(()=>$('#loader').classList.add('off'),1000);
+
+  /* Real calendar-month calculations; no total days/hours/minutes shown. */
+  let counterAnimated=false;
+  function animateDigits(months,days){
+    if(counterAnimated || reduceMotion){ text('months-value',String(months));text('days-value',String(days));return; }
+    counterAnimated=true;
+    const startAt=performance.now(),duration=1100;
+    const step=ts=>{
+      const progress=Math.min(1,(ts-startAt)/duration),eased=1-Math.pow(1-progress,3);
+      text('months-value',String(Math.round(months*eased)));
+      text('days-value',String(Math.round(days*eased)));
+      if(progress<1)requestAnimationFrame(step);
+    };requestAnimationFrame(step);
+  }
+  function updateCurrentDate(){
+    today=nowInTunis();const key=dateKey(today);
+    if(key===previousDateKey)return;
+    previousDateKey=key;current=calendarDiff(start,today);
+    const val=current.future?{months:0,days:0}:current;
+    if(counterAnimated){text('months-value',String(val.months));text('days-value',String(val.days));}
+    else {$('#months-value').dataset.target=String(val.months);$('#days-value').dataset.target=String(val.days);}
+    renderGalaxy();renderCapsule();
+  }
+  /* Refresh after midnight in the specified timezone even on long-open tabs. */
+  setInterval(updateCurrentDate,30000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateCurrentDate();});
+
+  /* Monthly constellation - a first star plus one per completed month, future stars locked. */
+  const svgStar='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2L30.5 17.5 46 24 30.5 30.5 24 46 17.5 30.5 2 24 17.5 17.5Z"/><path d="M24 10V38M10 24H38" stroke-width="1" stroke="#ffe3ee" fill="none" opacity=".6"/></svg>';
+  const svgLock='<svg viewBox="0 0 24 24" role="img" aria-label="Locked"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>';
+  const svgHeart='<svg viewBox="0 0 24 24" role="img" aria-label="Unlocked"><path d="M20.7 5.4a5.6 5.6 0 0 0-7.9 0l-.8.8-.8-.8a5.6 5.6 0 0 0-7.9 7.9l.8.8L12 22l7.9-7.9.8-.8a5.6 5.6 0 0 0 0-7.9Z"/></svg>';
+  function renderGalaxy(){
+    const root=$('#galaxy-track');root.textContent='';
+    const count=Math.max(13,current.months+5);
+    for(let m=0;m<count;m++){
+      const milestone=monthAnniversary(start,m);const unlocked=stamp(milestone)<=stamp(today);
+      const memory=c.monthlyMemories.find(x=>x.month===m);
+      const button=el('button','galaxy-node '+(unlocked?'open':'locked'));
+      button.type='button';button.dataset.month=String(m);button.setAttribute('aria-label',(unlocked?'Open ':'Locked ')+(memory?.title||(m===0?'Our Beginning':'Month '+m+' Together')));
+      const star=el('span','galaxy-star');star.innerHTML=svgStar;
+      const month=el('span','galaxy-month',monthLabel(milestone));
+      const label=el('span','galaxy-label',memory?.title||(m===0?'Our Beginning':'Month '+m+' Together'));
+      button.append(star,month,label);
+      if(!unlocked)button.append(el('span','galaxy-lock','\u2727'));
+      button.addEventListener('click',()=>{if(!unlocked){showToast('Unlocks on '+dateLabel(dateKey(milestone))+' \u2726');return;}openMemory(m,milestone,memory);});
+      root.append(button);
+    }
+    text('galaxy-legend-open','Unlocked memories');text('galaxy-legend-locked','Still to come');
+    // The latest milestone remains visible on older relationships.
+    if(current.months>5){const target=root.children[Math.min(current.months,count-1)];setTimeout(()=>target?.scrollIntoView({inline:'center',block:'nearest',behavior:'instant'}),100);}
+  }
+  function openMemory(m,milestone,memory){
+    const title=memory?.title||(m===0?'Our Beginning':'Month '+m+' Together');
+    const message=memory?.message||'\u2726 Your little memory goes here. Add it to monthlyMemories in loveConfig.ts.';
+    openModal('<span class="modal-star">\u2726</span><span class="modal-month">'+safe(dateLabel(dateKey(milestone)))+'</span><h2 class="modal-h" id="modal-title">'+safe(title)+'</h2><p class="modal-p" dir="rtl">'+safe(message)+'</p><small class="modal-note">A LITTLE STAR IN OUR FOREVER</small>');
+  }
+
+  /* Photo reel; mobile has native touch momentum and CSS scroll snapping. */
+  let photoIndex=0;
+  const palettes=[['#aa738d','#5d3b60'],['#ba8b95','#71536d'],['#ddadb6','#b27484'],['#c4a1bd','#74608a'],['#b77a8b','#6d4f5c'],['#d6a8ab','#a36c84']];
+  const photos=c.galleryPhotos.length?c.galleryPhotos:[];
+  function placeholder(){return '<div class="photo-placeholder"><span class="placeholder-frame"><span>\u2665</span></span><small>OUR MOMENT</small></div>';}
+  function renderPhotos(){
+    const track=$('#gallery-scroller');track.textContent='';
+    photos.forEach((p,i)=>{
+      const card=el('button','polaroid');card.type='button';card.dataset.photoIndex=String(i);
+      card.style.setProperty('--tilt',[-3,2,-1.5,3.1,-2.3,1.6][i%6]+'deg');
+      const art=el('div','photo-art');const colors=palettes[i%palettes.length];
+      art.style.setProperty('--col-a',colors[0]);art.style.setProperty('--col-b',colors[1]);art.style.setProperty('--deg',115+(i*11)%65+'deg');
+      if(p.src){const img=el('img');img.src=p.src;img.alt=p.caption||'Our photo '+(i+1);img.loading='lazy';img.addEventListener('error',()=>{img.remove();art.innerHTML=placeholder();});art.append(img);}
+      else art.innerHTML=placeholder();
+      const bottom=el('div','polaroid-bottom');
+      const cap=el('div');cap.append(el('div','polaroid-caption',p.caption));
+      if(p.date)cap.append(el('small','polaroid-date',p.date));
+      bottom.append(cap,el('span','polaroid-heart','\u2665'));
+      card.append(art,bottom);card.addEventListener('click',()=>showPhoto(i));track.append(card);
+    });
+    const dots=$('#gallery-dots');dots.textContent='';
+    photos.forEach((_,i)=>{const dot=el('button','gallery-dot'+(i===0?' active':''));dot.type='button';dot.setAttribute('aria-label','Go to photo '+(i+1));dot.addEventListener('click',()=>scrollPhoto(i));dots.append(dot);});
+  }
+  function scrollPhoto(n){
+    if(!photos.length)return;photoIndex=(n+photos.length)%photos.length;
+    const card=$('#gallery-scroller').children[photoIndex];
+    card?.scrollIntoView({behavior:reduceMotion?'instant':'smooth',block:'nearest',inline:'center'});
+    $$('.gallery-dot').forEach((dot,i)=>dot.classList.toggle('active',i===photoIndex));
+  }
+  $('#gallery-prev').addEventListener('click',()=>scrollPhoto(photoIndex-1));
+  $('#gallery-next').addEventListener('click',()=>scrollPhoto(photoIndex+1));
+  let scrollTimer;
+  $('#gallery-scroller').addEventListener('scroll',()=>{
+    clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{
+      const track=$('#gallery-scroller'),rect=track.getBoundingClientRect();let best=Infinity,bestIdx=0;
+      Array.from(track.children).forEach((card,i)=>{const cRect=card.getBoundingClientRect();const dist=Math.abs(cRect.left+cRect.width/2-(rect.left+rect.width/2));if(dist<best){best=dist;bestIdx=i;}});
+      photoIndex=bestIdx;$$('.gallery-dot').forEach((dot,i)=>dot.classList.toggle('active',i===photoIndex));
+    },100);
+  },{passive:true});
+  function showPhoto(i){
+    if(!photos.length)return;photoIndex=(i+photos.length)%photos.length;
+    const p=photos[photoIndex],colors=palettes[photoIndex%6];
+    const art=p.src?'<img src="'+safe(p.src)+'" alt="'+safe(p.caption)+'" />':'<div class="lightbox-placeholder"><span>\u2665</span><p>PLACE YOUR FAVORITE PHOTO HERE</p></div>';
+    const html='<div class="lightbox-main" style="background:linear-gradient(140deg,'+colors[0]+','+colors[1]+')">'+art+'<button class="lightbox-nav prev" type="button" id="lightbox-prev" aria-label="Previous image">\u2192</button><button class="lightbox-nav next" type="button" id="lightbox-next" aria-label="Next image">\u2190</button></div><div class="lightbox-caption" id="modal-title" dir="rtl">'+safe(p.caption)+'</div>';
+    openModal(html,'lightbox-modal');
+    $('#lightbox-prev').addEventListener('click',()=>showPhoto(photoIndex-1));
+    $('#lightbox-next').addEventListener('click',()=>showPhoto(photoIndex+1));
+    $('#modal-content img')?.addEventListener('error',e=>{e.target.outerHTML='<div class="lightbox-placeholder"><span>\u2665</span><p>ADD YOUR PHOTO IN THE CONFIG</p></div>';});
+  }
+
+  /* Flip/tap love hearts, never exposing messages until clicked. */
+  function renderReasons(){
+    const root=$('#reasons-grid');root.textContent='';
+    c.loveReasons.forEach((reason,i)=>{
+      const button=el('button','reason-card reveal');button.type='button';button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Reveal love reason '+(i+1));
+      button.append(el('span','reason-index',String(i+1).padStart(2,'0')+' / LOVE'),el('span','reason-icon','\u2665'),el('span','reason-prompt','Tap to reveal'),el('span','reason-message',reason));
+      button.addEventListener('click',()=>{const toggled=button.classList.toggle('revealed');button.setAttribute('aria-expanded',String(toggled));button.setAttribute('aria-label',toggled?reason:'Reveal love reason '+(i+1));});
+      root.append(button);
+    });
+  }
+
+  /* Secret letter remains unrevealed until asked. */
+  $('#secret-open').addEventListener('click',()=>{
+    const panel=$('#letter-reveal');
+    const isOpen=!panel.hidden;
+    if(!isOpen){
+      $('#written-letter').textContent=c.loveLetter;
+      panel.hidden=false;
+      $('#secret-open').setAttribute('aria-expanded','true');
+      $('#secret-open').firstElementChild.textContent='Close the letter \u2665';
+      burst($('.letter-illustration'),13);
+      setTimeout(()=>panel.scrollIntoView({behavior:reduceMotion?'instant':'smooth',block:'nearest'}),100);
+    } else {
+      panel.hidden=true;$('#secret-open').setAttribute('aria-expanded','false');
+      $('#secret-open').firstElementChild.textContent=c.secretButton;
+    }
+  });
+
+  /* A symbolic, client-only anniversary time capsule. */
+  let futureOpened=false;
+  function renderCapsule(){
+    const openable=stamp(today)>=stamp(parseDate(c.unlockDate));
+    text('capsule-date',dateLabel(c.unlockDate));
+    const capsule=$('#future-capsule');
+    capsule.classList.toggle('unlocked',openable);
+    capsule.disabled=!openable;
+    capsule.setAttribute('aria-disabled',String(!openable));
+    $('#capsule-symbol').innerHTML=openable?svgHeart:svgLock;
+    text('capsule-prompt',openable?'Your one-year love letter is ready. Tap to open.':'Locked until '+dateLabel(c.unlockDate));
+    if(!openable){$('#future-message').hidden=true;futureOpened=false;}
+  }
+  $('#future-capsule').addEventListener('click',()=>{
+    if(stamp(today)<stamp(parseDate(c.unlockDate)))return;
+    futureOpened=!futureOpened;const panel=$('#future-message');panel.hidden=!futureOpened;
+    if(futureOpened){panel.textContent=c.futureLetter||'Add a future anniversary note to loveConfig.ts';burst($('#future-capsule'),18);text('capsule-prompt','Opened with love. Tap to close.');}
+    else text('capsule-prompt','Your one-year love letter is ready. Tap to open.');
+  });
+
+  /* Final heart reveal and deliberately lightweight celebration. */
+  $('#final-open').addEventListener('click',()=>{
+    $('#final-open').hidden=true;
+    $('#final-reveal').hidden=false;
+    $('#final-heart-wrap').classList.add('beating');
+    if(!reduceMotion){
+      const host=$('#final-shimmer');
+      for(let i=0;i<26;i++){
+        const part=el('span','final-heart-particle',i%4===0?'\u2726':'\u2665');
+        part.style.left=(5+Math.random()*90).toFixed(1)+'%';
+        part.style.setProperty('--drift',Math.round((Math.random()-.5)*190)+'px');
+        part.style.setProperty('--rise',(2.8+Math.random()*3.8).toFixed(2)+'s');
+        part.style.animationDelay=(Math.random()*1.2).toFixed(2)+'s';
+        host.append(part);setTimeout(()=>part.remove(),8500);
+      }
+    }
+  });
+
+  /* Optional music; only ever plays in response to an actual click. */
+  if(c.backgroundMusic){
+    const btn=$('#music-btn');btn.hidden=false;
+    const audio=new Audio(c.backgroundMusic);audio.loop=true;audio.preload='none';audio.volume=0;
+    let fadeTimer=null,desiredPlaying=false;
+    const draw=()=>{btn.innerHTML=desiredPlaying?'&#9835;':'&#9834;';btn.setAttribute('aria-label',desiredPlaying?'Pause music':'Play music');btn.title=desiredPlaying?'Pause music':'Play music';};
+    function fadeTo(target,onEnd){
+      if(fadeTimer)clearInterval(fadeTimer);
+      fadeTimer=setInterval(()=>{
+        const diff=target-audio.volume,next=Math.max(0,Math.min(1, audio.volume + Math.sign(diff)*Math.min(.05,Math.abs(diff))));
+        audio.volume=next;
+        if(Math.abs(next-target)<.001){clearInterval(fadeTimer);fadeTimer=null;onEnd?.();}
+      },50);
+    }
+    btn.addEventListener('click',async()=>{
+      desiredPlaying=!desiredPlaying;draw();
+      if(desiredPlaying){try{await audio.play();fadeTo(.42);}catch(e){desiredPlaying=false;draw();showToast('Please add a playable audio file.');}}
+      else fadeTo(0,()=>audio.pause());
+    });
+    draw();
+  }
+
+  /* A single accessible modal for monthly stars and gallery photos. */
+  let returnFocus=null;
+  function openModal(html,cls=''){
+    const m=$('#modal');returnFocus=document.activeElement;
+    m.hidden=false;$('#modal-panel').className='modal-panel '+cls;
+    $('#modal-content').innerHTML=html;
+    document.body.classList.add('no-scroll');
+    $('#modal-close').focus({preventScroll:true});
+  }
+  function closeModal(){const m=$('#modal');if(m.hidden)return;m.hidden=true;document.body.classList.remove('no-scroll');$('#modal-content').textContent='';returnFocus?.focus?.({preventScroll:true});}
+  $('#modal-close').addEventListener('click',closeModal);$('#modal-backdrop').addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{
+    if($('#modal').hidden)return;
+    if(e.key==='Escape'){e.preventDefault();closeModal();}
+    if(e.key==='ArrowRight' && $('#modal-panel').classList.contains('lightbox-modal'))showPhoto(photoIndex-1);
+    if(e.key==='ArrowLeft' && $('#modal-panel').classList.contains('lightbox-modal'))showPhoto(photoIndex+1);
+    if(e.key==='Tab'){
+      const focusables=$$('button,a,[tabindex]:not([tabindex="-1"])',$('#modal-panel')).filter(n=>!n.disabled);
+      if(!focusables.length)return;
+      if(e.shiftKey && document.activeElement===focusables[0]){e.preventDefault();focusables.at(-1).focus();}
+      else if(!e.shiftKey && document.activeElement===focusables.at(-1)){e.preventDefault();focusables[0].focus();}
+    }
+  });
+  let toastTimeout;
+  function showToast(message){clearTimeout(toastTimeout);const t=$('#toast');t.textContent=message;t.classList.add('show');toastTimeout=setTimeout(()=>t.classList.remove('show'),3000);}
+
+  /* Reveal transitions and section-aware mobile navigation. */
+  const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('is-visible');revealObserver.unobserve(e.target);
+      if(e.target.id==='counter-wrap'){const m=Number($('#months-value').dataset.target||current.months),d=Number($('#days-value').dataset.target||current.days);animateDigits(m,d);}
+    });
+  },{threshold:.13,rootMargin:'0px 0px -30px 0px'}) : null;
+  function observeReveals(){ $$('.reveal').forEach(node=>{if(revealObserver)revealObserver.observe(node);else node.classList.add('is-visible');}); }
+  const secObserver='IntersectionObserver' in window ? new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(!e.isIntersecting)return;const key=e.target.id;
+      $$('[data-bottom]').forEach(n=>n.classList.toggle('active',n.dataset.bottom===key));
+      $$('[data-nav]').forEach(n=>n.classList.toggle('active',n.dataset.nav===key));
+    });
+  },{rootMargin:'-30% 0px -55% 0px'}) : null;
+  if(secObserver)$$('main > section').forEach(sec=>secObserver.observe(sec));
+  renderPhotos();renderReasons();updateCurrentDate();observeReveals();
+  // Calendar algorithm regression cases from the project specification.
+  const tests=[['2026-10-13',4,12],['2026-11-01',5,0],['2026-11-14',5,13],['2027-06-01',12,0]];
+  tests.forEach(([input,months,days])=>{const r=calendarDiff(start,parseDate(input));if(r.months!==months||r.days!==days)console.error('Calendar test failed:',input,r);});
+})();
+
+</script>
+</body>
+</html>
